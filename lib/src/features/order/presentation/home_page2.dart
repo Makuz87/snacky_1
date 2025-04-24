@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:snacky_1/src/features/order/domain/recommendation.dart';
-import 'package:snacky_1/src/features/order/presentation/recommend.dart';
+import 'package:snacky_1/src/features/order/presentation/recommend_widget.dart';
 
 class HomePage2 extends StatelessWidget {
   const HomePage2({super.key});
@@ -124,29 +124,24 @@ class HomePage2 extends StatelessWidget {
                       ),
                     ),
                     SizedBox(height: 40),
-                    Text(
-                      "We Recommend",
-                      style: TextStyle(
-                          color: Colors.white, fontWeight: FontWeight.w900),
-                    ),
+                    Text("We Recommend",
+                        style: TextStyle(
+                            color: Colors.white, fontWeight: FontWeight.w900)),
                     SizedBox(height: 15),
                     SingleChildScrollView(
                       scrollDirection: Axis.horizontal,
                       child: Row(
                         spacing: 12,
                         children: [
-                          Recommend(
-                            recommendation: weRecommend1,
+                          InkWell(
+                            onTap: () {},
+                            child: RecommendWidget(
+                              recommendation: weRecommend1,
+                            ),
                           ),
-                          Recommend(
-                            recommendation: weRecommend2,
-                          ),
-                          Recommend(
-                            recommendation: weRecommend3,
-                          ),
-                          Recommend(
-                            recommendation: weRecommend4,
-                          ),
+                          RecommendWidget(recommendation: weRecommend2),
+                          RecommendWidget(recommendation: weRecommend3),
+                          RecommendWidget(recommendation: weRecommend4),
                         ],
                       ),
                     ),

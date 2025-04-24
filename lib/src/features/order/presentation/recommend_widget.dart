@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:snacky_1/src/features/order/domain/recommendation.dart';
 
-class Recommend extends StatelessWidget {
+class RecommendWidget extends StatelessWidget {
   final Recommendation recommendation;
 
-  const Recommend({
+  const RecommendWidget({
     super.key,
     required this.recommendation,
   });

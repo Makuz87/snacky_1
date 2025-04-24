@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:snacky_1/src/order_card.dart';
+import 'package:snacky_1/src/features/order/presentation/order_card_widget.dart';
 
-class OrderPage extends StatelessWidget {
-  const OrderPage({super.key});
+class StartPage extends StatelessWidget {
+  const StartPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -26,7 +26,7 @@ class OrderPage extends StatelessWidget {
           alignment: Alignment.bottomCenter,
           child: Padding(
             padding: const EdgeInsets.only(bottom: 100),
-            child: OrderCard(),
+            child: OrderCardWidget(),
           ),
         ),
       ),

@@ -2,8 +2,8 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 
-class OrderCard extends StatelessWidget {
-  const OrderCard({
+class OrderCardWidget extends StatelessWidget {
+  const OrderCardWidget({
     super.key,
   });
 
