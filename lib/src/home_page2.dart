@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:snacky_1/src/features/order/domain/recommendation.dart';
+import 'package:snacky_1/src/features/order/presentation/recommend.dart';
 
 class HomePage2 extends StatelessWidget {
   const HomePage2({super.key});
@@ -129,94 +130,28 @@ class HomePage2 extends StatelessWidget {
                           color: Colors.white, fontWeight: FontWeight.w900),
                     ),
                     SizedBox(height: 15),
-                    Recommend(),
-                  ],
-                ),
-              ),
-            ),
-          ),
-        ],
-      ),
-    );
-  }
-}
-
-class Recommend extends StatelessWidget {
-  const Recommend({
-    super.key,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      child: Row(
-        children: [
-          Container(
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(24),
-              gradient: LinearGradient(
-                  colors: [Color(0xFF908CF5), Color(0xFF8C5BEA)],
-                  begin: Alignment.topCenter,
-                  end: Alignment.bottomCenter),
-            ),
-            child: Padding(
-              padding: const EdgeInsets.all(12.0),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Padding(
-                    padding: const EdgeInsets.all(12.0),
-                    child: Image(
-                      image: AssetImage(
-                        "assets/images/cat cupcakes_3D_Mogli.png",
-                      ),
-                      height: 130,
-                    ),
-                  ),
-                  Text(
-                    "Mogli`s Cup",
-                    style: TextStyle(
-                      fontSize: 14,
-                      fontWeight: FontWeight.w700,
-                    ),
-                  ),
-                  Text(
-                    "Strawberry ice cream",
-                    style: TextStyle(
-                      fontSize: 14,
-                      fontWeight: FontWeight.w300,
-                    ),
-                  ),
-                  Row(
-                    // mainAxisAlignment:
-                    //     MainAxisAlignment.spaceBetween,
-                    children: [
-                      Text(
-                        "€ 8.99",
-                        style: TextStyle(
-                          fontSize: 10,
-                          fontWeight: FontWeight.w300,
-                        ),
-                      ),
-                      SizedBox(width: 80),
-                      Row(
+                    SingleChildScrollView(
+                      scrollDirection: Axis.horizontal,
+                      child: Row(
+                        spacing: 12,
                         children: [
-                          Icon(
-                            Icons.favorite_border,
-                            size: 12,
+                          Recommend(
+                            recommendation: weRecommend1,
                           ),
-                          Text(
-                            "200",
-                            style: TextStyle(
-                              fontSize: 10,
-                              fontWeight: FontWeight.w200,
-                            ),
+                          Recommend(
+                            recommendation: weRecommend2,
+                          ),
+                          Recommend(
+                            recommendation: weRecommend3,
+                          ),
+                          Recommend(
+                            recommendation: weRecommend4,
                           ),
                         ],
                       ),
-                    ],
-                  ),
-                ],
+                    ),
+                  ],
+                ),
               ),
             ),
           ),

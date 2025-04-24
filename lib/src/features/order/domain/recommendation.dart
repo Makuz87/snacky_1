@@ -13,3 +13,35 @@ class Recommendation {
     required this.imagePath,
   });
 }
+
+final weRecommend1 = Recommendation(
+  title: "Moglis Cup",
+  description: "Strawberry ice cream",
+  price: "8.99",
+  likes: "200",
+  imagePath: "assets/images/cat cupcakes_3D_Mogli.png",
+);
+
+final weRecommend2 = Recommendation(
+  title: "Balu`s Cup",
+  description: "Pistachio ice cream",
+  price: "8.99",
+  likes: "165",
+  imagePath: "assets/images/Ice.cream.png",
+);
+
+final weRecommend3 = Recommendation(
+  title: "Smiling David",
+  description: "Coffe ice cream",
+  price: "3.99",
+  likes: "310",
+  imagePath: "assets/images/ice cream stick_3D.png",
+);
+
+final weRecommend4 = Recommendation(
+  title: "Kai in a Cone",
+  description: "Vanilla ice cream",
+  price: "3.99",
+  likes: "290",
+  imagePath: "assets/images/Icecream_3D.png",
+);
