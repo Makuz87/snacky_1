@@ -1,0 +1,88 @@
+import 'dart:ui';
+
+import 'package:flutter/material.dart';
+
+class OrderCard extends StatelessWidget {
+  const OrderCard({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return ClipRRect(
+      borderRadius: BorderRadius.circular(24),
+      child: BackdropFilter(
+        filter: ImageFilter.blur(sigmaX: 15, sigmaY: 15),
+        child: Container(
+          padding: EdgeInsets.all(24),
+          height: 230,
+          width: 360,
+          decoration: BoxDecoration(
+            border: Border.all(
+              color: const Color.fromARGB(255, 100, 100, 100),
+              width: 0.5,
+            ),
+            color: const Color.fromARGB(255, 0, 0, 0).withOpacity(0.1),
+            borderRadius: BorderRadius.circular(24),
+          ),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              Text(
+                "Feeling Snackish Today?",
+                style: TextStyle(
+                  color: Colors.white,
+                  fontWeight: FontWeight.w800,
+                  fontSize: 24,
+                  letterSpacing: -0.5,
+                ),
+              ),
+              Text(
+                textAlign: TextAlign.center,
+                "Explore Angi`s most popular snack selection \nand get instantly happy.",
+                style: TextStyle(
+                  color: Colors.white,
+                  letterSpacing: -0.4,
+                  wordSpacing: -0.4,
+                ),
+              ),
+              SizedBox(height: 30),
+              ElevatedButton(
+                onPressed: () {},
+                style: ElevatedButton.styleFrom(
+                  padding: EdgeInsets.zero,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(12),
+                  ),
+                  foregroundColor: Colors.transparent,
+                  backgroundColor: Colors.transparent,
+                ),
+                child: Ink(
+                  decoration: BoxDecoration(
+                    gradient: LinearGradient(
+                      colors: [Colors.purple, Colors.pinkAccent],
+                      begin: Alignment.centerLeft,
+                      end: Alignment.centerRight,
+                    ),
+                    borderRadius: BorderRadius.circular(12),
+                  ),
+                  child: Container(
+                    // alignment: Alignment.center,
+                    padding: EdgeInsets.symmetric(horizontal: 64, vertical: 12),
+                    child: Text(
+                      "Order Now",
+                      style: TextStyle(
+                          fontSize: 18,
+                          fontWeight: FontWeight.w700,
+                          color: Colors.white),
+                    ),
+                  ),
+                ),
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}
