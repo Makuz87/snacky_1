@@ -15,6 +15,7 @@ class RecommendWidget extends StatelessWidget {
       child: Row(
         children: [
           Container(
+            width: 200,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(24),
               gradient: LinearGradient(
@@ -29,11 +30,13 @@ class RecommendWidget extends StatelessWidget {
                 children: [
                   Padding(
                     padding: const EdgeInsets.all(12.0),
-                    child: Image(
-                      image: AssetImage(
-                        recommendation.imagePath,
+                    child: Center(
+                      child: Image(
+                        image: AssetImage(
+                          recommendation.imagePath,
+                        ),
+                        height: 130,
                       ),
-                      height: 130,
                     ),
                   ),
                   Text(
@@ -51,8 +54,7 @@ class RecommendWidget extends StatelessWidget {
                     ),
                   ),
                   Row(
-                    // mainAxisAlignment:
-                    //     MainAxisAlignment.spaceBetween,
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Text(
                         recommendation.price,

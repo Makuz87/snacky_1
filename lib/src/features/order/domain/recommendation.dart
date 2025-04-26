@@ -43,5 +43,5 @@ final weRecommend4 = Recommendation(
   description: "Vanilla ice cream",
   price: "3.99",
   likes: "290",
-  imagePath: "assets/images/Icecream_3D.png",
+  imagePath: "assets/images/cat cupcakes_3D_Mogli.png",
 );

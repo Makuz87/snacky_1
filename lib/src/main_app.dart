@@ -9,7 +9,12 @@ class MainApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: HomePage2(),
+      home: Stack(
+        children: [
+          HomePage2(),
+          StartPage(),
+        ],
+      ),
     );
   }
 }
