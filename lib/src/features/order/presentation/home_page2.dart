@@ -135,7 +135,32 @@ class HomePage2 extends StatelessWidget {
                         children: [
                           InkWell(
                             // Todo aufgehört! showButtomSheet
-                            onTap: () {},
+                            onTap: () {
+                              showModalBottomSheet(
+                                backgroundColor: Colors.transparent,
+                                context: context,
+                                isScrollControlled: true,
+                                builder: (context) {
+                                  return Container(
+                                    height: 750,
+                                    padding: EdgeInsets.all(12),
+                                    decoration: BoxDecoration(
+                                        borderRadius: BorderRadius.vertical(
+                                            top: Radius.circular(40)),
+                                        color: Colors.grey.shade900),
+                                    child: Column(
+                                      children: [
+                                        Center(
+                                          child: Image(
+                                              image: AssetImage(
+                                                  "assets/images/cat cupcakes_3D_Mogli.png")),
+                                        )
+                                      ],
+                                    ),
+                                  );
+                                },
+                              );
+                            },
                             child: RecommendWidget(
                               recommendation: weRecommend1,
                             ),
