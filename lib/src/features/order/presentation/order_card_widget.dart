@@ -1,7 +1,7 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
-import 'package:snacky_1/src/features/order/presentation/home_page2.dart';
+import 'package:snacky_1/src/features/order/presentation/home_page.dart';
 
 class OrderCardWidget extends StatelessWidget {
   const OrderCardWidget({
@@ -51,7 +51,7 @@ class OrderCardWidget extends StatelessWidget {
               ElevatedButton(
                 onPressed: () {
                   Navigator.of(context).push(MaterialPageRoute(
-                    builder: (context) => HomePage2(),
+                    builder: (context) => HomePage(),
                   ));
                 },
                 style: ElevatedButton.styleFrom(

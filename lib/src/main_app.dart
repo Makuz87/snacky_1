@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:snacky_1/src/features/order/presentation/home_page2.dart';
+import 'package:snacky_1/src/features/order/presentation/home_page.dart';
 import 'package:snacky_1/src/features/order/presentation/start_page.dart';
 
 class MainApp extends StatelessWidget {
@@ -11,7 +11,7 @@ class MainApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       home: Stack(
         children: [
-          HomePage2(),
+          HomePage(),
           StartPage(),
         ],
       ),

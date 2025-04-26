@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 
 class Details {
-  final String imagePath;
   final String title;
   final String description;
   final String price;
@@ -12,7 +11,6 @@ class Details {
   final double rating;
 
   Details({
-    required this.imagePath,
     required this.title,
     required this.description,
     required this.price,
@@ -25,7 +23,6 @@ class Details {
 }
 
 final DescriptionCard1 = Details(
-  imagePath: "assets/images/cat cupcakes_3D_Mogli.png",
   title: "Mogli`s",
   description: "description",
   price: "€ 8.99",

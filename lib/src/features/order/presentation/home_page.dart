@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:snacky_1/src/features/order/domain/details.dart';
 import 'package:snacky_1/src/features/order/domain/recommendation.dart';
 import 'package:snacky_1/src/features/order/presentation/recommend_widget.dart';
 
-class HomePage2 extends StatelessWidget {
-  const HomePage2({super.key});
+class HomePage extends StatelessWidget {
+  const HomePage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -142,20 +143,62 @@ class HomePage2 extends StatelessWidget {
                                 isScrollControlled: true,
                                 builder: (context) {
                                   return Container(
+                                    width: 910,
                                     height: 750,
                                     padding: EdgeInsets.all(12),
                                     decoration: BoxDecoration(
                                         borderRadius: BorderRadius.vertical(
-                                            top: Radius.circular(40)),
+                                            top: Radius.circular(20)),
                                         color: Colors.grey.shade900),
-                                    child: Column(
-                                      children: [
-                                        Center(
-                                          child: Image(
-                                              image: AssetImage(
-                                                  "assets/images/cat cupcakes_3D_Mogli.png")),
-                                        )
-                                      ],
+                                    child: Center(
+                                      child: Container(
+                                        width: 340,
+                                        height: 330,
+                                        decoration: BoxDecoration(
+                                          color: Colors.grey,
+                                        ),
+                                        child: Padding(
+                                          padding: const EdgeInsets.all(24.0),
+                                          child: Column(
+                                            children: [
+                                              Text(
+                                                "Mogli`s Cup",
+                                                style: TextStyle(
+                                                  fontWeight: FontWeight.w700,
+                                                  fontSize: 20,
+                                                ),
+                                              ),
+                                              SizedBox(height: 10),
+                                              Text(
+                                                "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea",
+                                              ),
+                                              SizedBox(height: 20),
+                                              Text("€ 8.99"),
+                                              SizedBox(height: 10),
+                                              Divider(),
+                                              SizedBox(height: 20),
+                                              Row(
+                                                mainAxisAlignment:
+                                                    MainAxisAlignment
+                                                        .spaceBetween,
+                                                children: [
+                                                  Text("Ingredients"),
+                                                  Text("Reviews")
+                                                ],
+                                              ),
+                                              Row(
+                                                mainAxisAlignment:
+                                                    MainAxisAlignment
+                                                        .spaceBetween,
+                                                children: [
+                                                  Icon(Icons.abc_outlined),
+                                                  Icon(Icons.star),
+                                                ],
+                                              )
+                                            ],
+                                          ),
+                                        ),
+                                      ),
                                     ),
                                   );
                                 },
