@@ -138,49 +138,56 @@ class HomePage extends StatelessWidget {
                           InkWell(
                             onTap: () {
                               showModalBottomSheet(
-                                // backgroundColor: Colors.transparent,
+                                backgroundColor: Colors.transparent,
                                 context: context,
                                 isScrollControlled: true,
                                 builder: (context) {
-                                  return Column(
-                                    children: [
-                                      DetailsCardWidget(
-                                        detailCard: DescriptionCard1,
-                                      ),
-                                      // Todo solve Button problem
-                                      ElevatedButton(
-                                        onPressed: () {},
-                                        style: ElevatedButton.styleFrom(
-                                          padding: EdgeInsets.all(8),
-                                          shape: RoundedRectangleBorder(
-                                            borderRadius:
-                                                BorderRadius.circular(12),
-                                          ),
+                                  return Container(
+                                    height: MediaQuery.of(context).size.height *
+                                        0.90,
+                                    child: Column(
+                                      spacing: 20,
+                                      children: [
+                                        DetailsCardWidget(
+                                          detailCard: DescriptionCard1,
                                         ),
-                                        child: Ink(
-                                          decoration: BoxDecoration(
-                                            gradient: LinearGradient(
-                                                colors: [
-                                                  Colors.purple,
-                                                  Colors.pinkAccent
-                                                ],
-                                                begin: Alignment.centerLeft,
-                                                end: Alignment.centerRight),
-                                            borderRadius:
-                                                BorderRadius.circular(8),
+                                        // Todo solve Button problem
+                                        ElevatedButton(
+                                          onPressed: () {},
+                                          style: ElevatedButton.styleFrom(
+                                            padding: EdgeInsets.zero,
+                                            shape: RoundedRectangleBorder(
+                                              borderRadius:
+                                                  BorderRadius.circular(12),
+                                            ),
+                                            // foregroundColor: Colors.transparent,
+                                            // backgroundColor: Colors.transparent,
                                           ),
-                                          child: Container(
-                                            padding: EdgeInsets.symmetric(
-                                                horizontal: 64, vertical: 12),
-                                            child: Text(
-                                              "Add to order for €8.99",
-                                              style: TextStyle(
-                                                  color: Colors.white),
+                                          child: Ink(
+                                            decoration: BoxDecoration(
+                                              gradient: LinearGradient(
+                                                  colors: [
+                                                    Colors.purple,
+                                                    Colors.pinkAccent
+                                                  ],
+                                                  begin: Alignment.centerLeft,
+                                                  end: Alignment.centerRight),
+                                              borderRadius:
+                                                  BorderRadius.circular(12),
+                                            ),
+                                            child: Container(
+                                              padding: EdgeInsets.symmetric(
+                                                  horizontal: 64, vertical: 12),
+                                              child: Text(
+                                                "Add to order for €8.99",
+                                                style: TextStyle(
+                                                    color: Colors.white),
+                                              ),
                                             ),
                                           ),
                                         ),
-                                      ),
-                                    ],
+                                      ],
+                                    ),
                                   );
                                 },
                               );
