@@ -8,7 +8,7 @@ class Details {
   final IconData ingredientsIcon;
   final String reviews;
   final IconData stars;
-  final double rating;
+  final String rating;
 
   Details({
     required this.title,
@@ -30,5 +30,5 @@ final DescriptionCard1 = Details(
   ingredientsIcon: Icons.edit_attributes,
   reviews: "Reviews",
   stars: Icons.star,
-  rating: 4.0,
+  rating: "4.0",
 );

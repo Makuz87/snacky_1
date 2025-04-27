@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:snacky_1/src/features/order/domain/details.dart';
 import 'package:snacky_1/src/features/order/domain/recommendation.dart';
+import 'package:snacky_1/src/features/order/presentation/details_card_widget.dart';
 import 'package:snacky_1/src/features/order/presentation/recommend_widget.dart';
 
 class HomePage extends StatelessWidget {
@@ -135,71 +136,51 @@ class HomePage extends StatelessWidget {
                         spacing: 12,
                         children: [
                           InkWell(
-                            // Todo aufgehört! showButtomSheet
                             onTap: () {
                               showModalBottomSheet(
-                                backgroundColor: Colors.transparent,
+                                // backgroundColor: Colors.transparent,
                                 context: context,
                                 isScrollControlled: true,
                                 builder: (context) {
-                                  return Container(
-                                    width: 910,
-                                    height: 750,
-                                    padding: EdgeInsets.all(12),
-                                    decoration: BoxDecoration(
-                                        borderRadius: BorderRadius.vertical(
-                                            top: Radius.circular(20)),
-                                        color: Colors.grey.shade900),
-                                    child: Center(
-                                      child: Container(
-                                        width: 340,
-                                        height: 330,
-                                        decoration: BoxDecoration(
-                                          color: Colors.grey,
+                                  return Column(
+                                    children: [
+                                      DetailsCardWidget(
+                                        detailCard: DescriptionCard1,
+                                      ),
+                                      // Todo solve Button problem
+                                      ElevatedButton(
+                                        onPressed: () {},
+                                        style: ElevatedButton.styleFrom(
+                                          padding: EdgeInsets.all(8),
+                                          shape: RoundedRectangleBorder(
+                                            borderRadius:
+                                                BorderRadius.circular(12),
+                                          ),
                                         ),
-                                        child: Padding(
-                                          padding: const EdgeInsets.all(24.0),
-                                          child: Column(
-                                            children: [
-                                              Text(
-                                                "Mogli`s Cup",
-                                                style: TextStyle(
-                                                  fontWeight: FontWeight.w700,
-                                                  fontSize: 20,
-                                                ),
-                                              ),
-                                              SizedBox(height: 10),
-                                              Text(
-                                                "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea",
-                                              ),
-                                              SizedBox(height: 20),
-                                              Text("€ 8.99"),
-                                              SizedBox(height: 10),
-                                              Divider(),
-                                              SizedBox(height: 20),
-                                              Row(
-                                                mainAxisAlignment:
-                                                    MainAxisAlignment
-                                                        .spaceBetween,
-                                                children: [
-                                                  Text("Ingredients"),
-                                                  Text("Reviews")
+                                        child: Ink(
+                                          decoration: BoxDecoration(
+                                            gradient: LinearGradient(
+                                                colors: [
+                                                  Colors.purple,
+                                                  Colors.pinkAccent
                                                 ],
-                                              ),
-                                              Row(
-                                                mainAxisAlignment:
-                                                    MainAxisAlignment
-                                                        .spaceBetween,
-                                                children: [
-                                                  Icon(Icons.abc_outlined),
-                                                  Icon(Icons.star),
-                                                ],
-                                              )
-                                            ],
+                                                begin: Alignment.centerLeft,
+                                                end: Alignment.centerRight),
+                                            borderRadius:
+                                                BorderRadius.circular(8),
+                                          ),
+                                          child: Container(
+                                            padding: EdgeInsets.symmetric(
+                                                horizontal: 64, vertical: 12),
+                                            child: Text(
+                                              "Add to order for €8.99",
+                                              style: TextStyle(
+                                                  color: Colors.white),
+                                            ),
                                           ),
                                         ),
                                       ),
-                                    ),
+                                    ],
                                   );
                                 },
                               );

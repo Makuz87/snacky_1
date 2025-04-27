@@ -66,6 +66,7 @@ class RecommendWidget extends StatelessWidget {
                       SizedBox(width: 80),
                       Row(
                         children: [
+                          // Todo: noch auslagern!
                           Icon(
                             Icons.favorite_border,
                             size: 12,
