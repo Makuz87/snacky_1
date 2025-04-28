@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:snacky_1/src/features/order/presentation/order_card_widget.dart';
+import 'package:snacky_1/src/features/order/domain/order.dart';
+import 'package:snacky_1/src/features/order/presentation/order_now_widget.dart';
 
 class StartPage extends StatelessWidget {
   const StartPage({super.key});
@@ -26,7 +27,7 @@ class StartPage extends StatelessWidget {
           alignment: Alignment.bottomCenter,
           child: Padding(
             padding: const EdgeInsets.only(bottom: 100),
-            child: OrderCardWidget(),
+            child: OrderNowWidget(order: Orders),
           ),
         ),
       ),

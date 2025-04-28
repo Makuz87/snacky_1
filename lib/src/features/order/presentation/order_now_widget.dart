@@ -1,11 +1,15 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
-import 'package:snacky_1/src/features/order/presentation/home_page.dart';
+import 'package:snacky_1/src/features/order/domain/order.dart';
+import 'package:snacky_1/src/home_page.dart';
 
-class OrderCardWidget extends StatelessWidget {
-  const OrderCardWidget({
+class OrderNowWidget extends StatelessWidget {
+  final Order order;
+
+  const OrderNowWidget({
     super.key,
+    required this.order,
   });
 
   @override
@@ -29,8 +33,10 @@ class OrderCardWidget extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
+              //Todo egal welcher Name?
+              Text(Orders.title),
               Text(
-                "Feeling Snackish Today?",
+                order.title,
                 style: TextStyle(
                   color: Colors.white,
                   fontWeight: FontWeight.w800,
@@ -40,7 +46,7 @@ class OrderCardWidget extends StatelessWidget {
               ),
               Text(
                 textAlign: TextAlign.center,
-                "Explore Angi`s most popular snack selection \nand get instantly happy.",
+                order.description,
                 style: TextStyle(
                   color: Colors.white,
                   letterSpacing: -0.4,

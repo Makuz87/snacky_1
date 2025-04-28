@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:snacky_1/src/features/order/domain/details.dart';
 import 'package:snacky_1/src/features/order/domain/recommendation.dart';
-import 'package:snacky_1/src/features/order/presentation/details_card_widget.dart';
+import 'package:snacky_1/src/features/order/presentation/details_widget.dart';
 import 'package:snacky_1/src/features/order/presentation/recommend_widget.dart';
 
 class HomePage extends StatelessWidget {
@@ -138,53 +138,24 @@ class HomePage extends StatelessWidget {
                           InkWell(
                             onTap: () {
                               showModalBottomSheet(
-                                backgroundColor: Colors.transparent,
                                 context: context,
                                 isScrollControlled: true,
                                 builder: (context) {
                                   return Container(
-                                    height: MediaQuery.of(context).size.height *
-                                        0.90,
+                                    height:
+                                        MediaQuery.of(context).size.height * 9,
+                                    decoration: BoxDecoration(
+                                      color: Colors.grey[200],
+                                    ),
                                     child: Column(
-                                      spacing: 20,
                                       children: [
-                                        DetailsCardWidget(
-                                          detailCard: DescriptionCard1,
-                                        ),
-                                        // Todo solve Button problem
+                                        DetailsWidget(
+                                            detailCard: DescriptionCard1),
                                         ElevatedButton(
-                                          onPressed: () {},
-                                          style: ElevatedButton.styleFrom(
-                                            padding: EdgeInsets.zero,
-                                            shape: RoundedRectangleBorder(
-                                              borderRadius:
-                                                  BorderRadius.circular(12),
-                                            ),
-                                            // foregroundColor: Colors.transparent,
-                                            // backgroundColor: Colors.transparent,
-                                          ),
-                                          child: Ink(
-                                            decoration: BoxDecoration(
-                                              gradient: LinearGradient(
-                                                  colors: [
-                                                    Colors.purple,
-                                                    Colors.pinkAccent
-                                                  ],
-                                                  begin: Alignment.centerLeft,
-                                                  end: Alignment.centerRight),
-                                              borderRadius:
-                                                  BorderRadius.circular(12),
-                                            ),
-                                            child: Container(
-                                              padding: EdgeInsets.symmetric(
-                                                  horizontal: 64, vertical: 12),
-                                              child: Text(
-                                                "Add to order for €8.99",
-                                                style: TextStyle(
-                                                    color: Colors.white),
-                                              ),
-                                            ),
-                                          ),
+                                          onPressed: () {
+                                            Navigator.of(context).pop();
+                                          },
+                                          child: Text("Add to Card"),
                                         ),
                                       ],
                                     ),

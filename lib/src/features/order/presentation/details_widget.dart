@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:snacky_1/src/features/order/domain/details.dart';
 
-class DetailsCardWidget extends StatelessWidget {
+class DetailsWidget extends StatelessWidget {
   final Details detailCard;
 
-  const DetailsCardWidget({super.key, required this.detailCard});
+  const DetailsWidget({super.key, required this.detailCard});
 
   @override
   Widget build(BuildContext context) {
