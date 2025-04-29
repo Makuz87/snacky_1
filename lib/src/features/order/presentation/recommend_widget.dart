@@ -4,6 +4,7 @@ import 'package:snacky_1/src/details_bottom_sheet.dart';
 import 'package:snacky_1/src/features/order/domain/recommendation.dart';
 import 'package:snacky_1/src/features/order/presentation/add_to_card_btn.dart';
 import 'package:snacky_1/src/features/order/presentation/details_widget.dart';
+import 'package:snacky_1/src/features/order/presentation/segment_sizes.dart';
 
 class RecommendWidget extends StatelessWidget {
   final Recommendation recommendation;
@@ -44,19 +45,7 @@ class RecommendWidget extends StatelessWidget {
                               // crossAxisAlignment: CrossAxisAlignment.start,
                               // mainAxisAlignment: MainAxisAlignment.center,
                               children: [
-                                Container(
-                                  // height: 80,
-                                  // width: 200,
-                                  child: CupertinoSegmentedControl<String>(
-                                    children: {
-                                      "Small": Text("Small"),
-                                      "Medium": Text("Medium"),
-                                      "Large": Text("Large"),
-                                    },
-                                    onValueChanged: (String value) {},
-                                    groupValue: "Large",
-                                  ),
-                                ),
+                                SegmentSizes(),
                                 Row(
                                   children: [
                                     Icon(Icons.remove_circle_outline,
@@ -79,17 +68,6 @@ class RecommendWidget extends StatelessWidget {
                               title: "Add to order for €8.99",
                             ),
                           ],
-                        ),
-                        Positioned(
-                          top: -100,
-                          right: 0,
-                          left: 0,
-                          child: Transform.scale(
-                            scale: 1.2,
-                            child: Image.asset(
-                              "assets/images/cat cupcakes_3D_Mogli.png",
-                            ),
-                          ),
                         ),
                       ],
                     )
