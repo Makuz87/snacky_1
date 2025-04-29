@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:snacky_1/src/features/order/domain/details.dart';
 import 'package:snacky_1/src/features/order/domain/recommendation.dart';
-import 'package:snacky_1/src/features/order/presentation/details_widget.dart';
 import 'package:snacky_1/src/features/order/presentation/recommend_widget.dart';
 
 class HomePage extends StatelessWidget {
@@ -126,16 +124,16 @@ class HomePage extends StatelessWidget {
                       style: TextStyle(
                           color: Colors.white, fontWeight: FontWeight.w900)),
                   SizedBox(height: 15),
-                  SingleChildScrollView(
-                    scrollDirection: Axis.horizontal,
-                    child: Row(
-                      children: [
-                        RecommendWidget(recommendation: weRecommend1),
-                        RecommendWidget(recommendation: weRecommend2),
-                        RecommendWidget(recommendation: weRecommend3),
-                        RecommendWidget(recommendation: weRecommend4),
-                      ],
-                    ),
+                  Container(
+                    height: 260,
+                    child: ListView.builder(
+                        padding: EdgeInsets.all(8),
+                        scrollDirection: Axis.horizontal,
+                        itemCount: recommendations.length,
+                        itemBuilder: (context, index) {
+                          return RecommendWidget(
+                              recommendation: recommendations[index]);
+                        }),
                   ),
                 ],
               ),

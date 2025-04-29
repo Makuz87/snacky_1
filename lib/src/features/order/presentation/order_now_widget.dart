@@ -1,8 +1,7 @@
 import 'dart:ui';
-
 import 'package:flutter/material.dart';
 import 'package:snacky_1/src/features/order/domain/order.dart';
-import 'package:snacky_1/src/home_page.dart';
+import 'package:snacky_1/src/features/order/presentation/add_to_card_btn.dart';
 
 class OrderNowWidget extends StatelessWidget {
   final Order order;
@@ -54,42 +53,7 @@ class OrderNowWidget extends StatelessWidget {
                 ),
               ),
               SizedBox(height: 30),
-              ElevatedButton(
-                onPressed: () {
-                  Navigator.of(context).push(MaterialPageRoute(
-                    builder: (context) => HomePage(),
-                  ));
-                },
-                style: ElevatedButton.styleFrom(
-                  padding: EdgeInsets.zero,
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(12),
-                  ),
-                  foregroundColor: Colors.transparent,
-                  backgroundColor: Colors.transparent,
-                ),
-                child: Ink(
-                  decoration: BoxDecoration(
-                    gradient: LinearGradient(
-                      colors: [Colors.purple, Colors.pinkAccent],
-                      begin: Alignment.centerLeft,
-                      end: Alignment.centerRight,
-                    ),
-                    borderRadius: BorderRadius.circular(12),
-                  ),
-                  child: Container(
-                    // alignment: Alignment.center,
-                    padding: EdgeInsets.symmetric(horizontal: 64, vertical: 12),
-                    child: Text(
-                      "Order Now",
-                      style: TextStyle(
-                          fontSize: 18,
-                          fontWeight: FontWeight.w700,
-                          color: Colors.white),
-                    ),
-                  ),
-                ),
-              ),
+              AddToCardBtn(title: "Order Now")
             ],
           ),
         ),
