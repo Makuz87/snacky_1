@@ -20,11 +20,12 @@ class DetailsWidget extends StatelessWidget {
             borderRadius: BorderRadius.circular(24),
             color: const Color.fromARGB(255, 94, 94, 94).withOpacity(0.1),
             border: Border.all(
-              color: Colors.white.withOpacity(0.1),
+              color: const Color.fromARGB(255, 71, 71, 71).withOpacity(0.1),
             ),
           ),
           child: Column(
             children: [
+//
               Text(
                 detailCard.title,
                 // "Mogli`s Cup",
@@ -34,25 +35,33 @@ class DetailsWidget extends StatelessWidget {
                   color: Colors.white,
                 ),
               ),
+
               SizedBox(height: 10),
+              //
               Text(
                 detailCard.description,
                 style: TextStyle(
                   color: Colors.white,
                 ),
               ),
+//
               SizedBox(height: 20),
+//
               Text(
                 detailCard.price,
                 style: TextStyle(
                   color: Colors.white,
                 ),
               ),
+              //
               SizedBox(height: 10),
+//
               Divider(
                 color: Colors.white,
               ),
+//
               SizedBox(height: 20),
+//
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
@@ -66,6 +75,7 @@ class DetailsWidget extends StatelessWidget {
                   )
                 ],
               ),
+
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [

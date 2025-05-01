@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:snacky_1/src/home_page.dart';
 
-class AddToCardBtn extends StatelessWidget {
+class AddToCardBtn2 extends StatelessWidget {
   final String title;
-  const AddToCardBtn({super.key, required this.title});
+  const AddToCardBtn2({super.key, required this.title});
 
   @override
   Widget build(BuildContext context) {
@@ -21,7 +21,7 @@ class AddToCardBtn extends StatelessWidget {
         foregroundColor: Colors.transparent,
         backgroundColor: Colors.transparent,
       ),
-      child: Ink(
+      child: Container(
         decoration: BoxDecoration(
           gradient: LinearGradient(
             colors: [
@@ -33,6 +33,14 @@ class AddToCardBtn extends StatelessWidget {
             end: Alignment.bottomRight,
           ),
           borderRadius: BorderRadius.circular(12),
+          boxShadow: [
+            BoxShadow(
+              color: Color.fromARGB(172, 246, 158, 224),
+              spreadRadius: 3,
+              blurRadius: 15,
+              offset: Offset(0, 5),
+            )
+          ],
         ),
         child: Container(
           // alignment: Alignment.center,

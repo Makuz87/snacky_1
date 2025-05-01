@@ -1,8 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:snacky_1/src/features/order/presentation/add_to_card_btn1.dart';
 
 class OfferCardWidget extends StatelessWidget {
+  final String title;
+
   const OfferCardWidget({
     super.key,
+    required this.title,
   });
 
   @override
@@ -10,19 +14,13 @@ class OfferCardWidget extends StatelessWidget {
     return Container(
       height: 240,
       width: 350,
-
       decoration: BoxDecoration(
-          image: DecorationImage(
-        image: AssetImage(
-          "assets/images/Top Card.png",
-        ),
-      )
-          // color: const Color.fromARGB(255, 92, 45, 45).withOpacity(0.4),
-          // borderRadius: BorderRadius.circular(30),
-          // border: Border.all(color: Colors.white),
+        image: DecorationImage(
+          image: AssetImage(
+            "assets/images/Top Card.png",
           ),
-      // padding: EdgeInsets.all(24),
-
+        ),
+      ),
       child: Stack(
         clipBehavior: Clip.none,
         children: [
@@ -31,6 +29,7 @@ class OfferCardWidget extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              //
               children: [
                 Text(
                   "Angi`s Yummy Burger",
@@ -39,8 +38,10 @@ class OfferCardWidget extends StatelessWidget {
                       fontWeight: FontWeight.w800,
                       fontSize: 18),
                 ),
+                //
                 Text("Delish vegan burger \nthat tastes like heaven",
                     style: TextStyle(color: Colors.white)),
+                //
                 Text(
                   "€13.99",
                   style: TextStyle(
@@ -49,15 +50,9 @@ class OfferCardWidget extends StatelessWidget {
                   ),
                 ),
                 SizedBox(height: 30),
-                ElevatedButton(
-                  onPressed: () {},
-                  style: ElevatedButton.styleFrom(
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(12),
-                    ),
-                  ),
-                  child: Text("Add to order"),
-                ),
+                //
+                AddToCardBtn1(title: title),
+                //
                 SizedBox(height: 10),
               ],
             ),

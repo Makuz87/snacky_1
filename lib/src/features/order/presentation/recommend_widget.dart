@@ -1,9 +1,9 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:snacky_1/src/details_bottom_sheet.dart';
 import 'package:snacky_1/src/features/order/domain/recommendation.dart';
-import 'package:snacky_1/src/features/order/presentation/add_to_card_btn.dart';
+import 'package:snacky_1/src/features/order/presentation/add_to_card_btn2.dart';
 import 'package:snacky_1/src/features/order/presentation/details_widget.dart';
-import 'package:snacky_1/src/features/order/presentation/segment_sizes.dart';
 
 class RecommendWidget extends StatelessWidget {
   final Recommendation recommendation;
@@ -20,6 +20,7 @@ class RecommendWidget extends StatelessWidget {
       children: [
         // Bild im Hintergrund
         Row(
+          // spacing: 10,
           children: [
             InkWell(
               onTap: () {
@@ -38,12 +39,22 @@ class RecommendWidget extends StatelessWidget {
                         right: 0,
                         left: 0,
                         child: Transform.scale(
-                          scale: 1.1,
+                          scale: 1.0,
                           child: Image.asset(
                             recommendation.imagePath,
                           ),
                         ),
                       ),
+                      Positioned(
+                        top: 8,
+                        right: 8,
+                        child: IconButton(
+                          icon: Icon(Icons.close),
+                          onPressed: () => Navigator.of(context).pop(),
+                          color: Colors.white,
+                        ),
+                      ),
+                      // Container fürs BottomSheet
                       Container(
                         padding: EdgeInsets.all(28),
                         height: MediaQuery.of(context).size.height * 0.88,
@@ -51,13 +62,65 @@ class RecommendWidget extends StatelessWidget {
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.end,
                           children: [
+                            // Detailcontainer im BottomSheet
                             DetailsWidget(detailCard: details),
+
                             SizedBox(height: 50),
+
                             Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
-                                SegmentSizes(),
+                                SizedBox(
+                                  // width: double.infinity,
+                                  child:
+                                      CupertinoSlidingSegmentedControl<String>(
+                                    backgroundColor:
+                                        const Color.fromARGB(255, 69, 69, 69),
+                                    thumbColor: const Color.fromARGB(
+                                        255, 136, 136, 136),
+                                    groupValue: "Large",
+                                    onValueChanged: (String? value) {},
+                                    children: {
+                                      "Small": Padding(
+                                        padding:
+                                            EdgeInsets.symmetric(vertical: 8),
+                                        child: Text(
+                                          "Small",
+                                          style: TextStyle(
+                                              fontSize: 12,
+                                              fontWeight: FontWeight.w500,
+                                              color: Colors.white),
+                                        ),
+                                      ),
+                                      "Medium": Padding(
+                                        padding:
+                                            EdgeInsets.symmetric(vertical: 8),
+                                        child: Text(
+                                          "Medium",
+                                          style: TextStyle(
+                                            fontSize: 12,
+                                            fontWeight: FontWeight.w500,
+                                            color: Colors.white,
+                                          ),
+                                        ),
+                                      ),
+                                      "Large": Padding(
+                                        padding:
+                                            EdgeInsets.symmetric(vertical: 8),
+                                        child: Text(
+                                          "Large",
+                                          style: TextStyle(
+                                              fontSize: 12,
+                                              fontWeight: FontWeight.w500,
+                                              color: Colors.white),
+                                        ),
+                                      ),
+                                    },
+                                  ),
+                                ),
+                                // SegmentSizes(),
                                 Row(
+                                  spacing: 10,
                                   children: [
                                     Icon(Icons.remove_circle_outline,
                                         color: Colors.white),
@@ -74,10 +137,13 @@ class RecommendWidget extends StatelessWidget {
                                 ),
                               ],
                             ),
+
                             SizedBox(height: 30),
-                            AddToCardBtn(
-                              title: "Add to order for €8.99",
+
+                            AddToCardBtn2(
+                              title: "Add to order for ₳8.99",
                             ),
+
                             SizedBox(height: 30),
                           ],
                         ),
@@ -88,73 +154,86 @@ class RecommendWidget extends StatelessWidget {
               },
               // TODO   RECOMMEND CONTAINER
               child: Container(
+                padding: EdgeInsets.all(18),
                 width: 200,
+                height: 300,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(24),
+                  // border: Border.all(color: Colors.red),
+                  border: Border.all(
+                    color: Color.alphaBlend(
+                      Color.fromARGB(100, 200, 152, 240),
+                      Color.fromARGB(150, 203, 192, 225),
+                    ),
+                  ),
                   gradient: LinearGradient(
-                    colors: [Color(0xFF908CF5), Color(0xFF8C5BEA)],
+                    colors: [
+                      Color.fromARGB(255, 99, 98, 106),
+                      Color(0xFF8C5BEA)
+                    ],
                     begin: Alignment.topCenter,
                     end: Alignment.bottomCenter,
                   ),
                 ),
-                child: Padding(
-                  padding: const EdgeInsets.all(12.0),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Padding(
-                        padding: const EdgeInsets.all(12.0),
-                        child: Center(
-                          child: Image(
-                            image: AssetImage(recommendation.imagePath),
-                            height: 130,
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Center(
+                      child: SizedBox(
+                        height: 150,
+                        child: Image.asset(recommendation.imagePath),
+                      ),
+                    ),
+                    SizedBox(height: 20),
+                    Text(
+                      recommendation.title,
+                      style: TextStyle(
+                        fontSize: 14,
+                        fontWeight: FontWeight.w700,
+                        color: Colors.white,
+                      ),
+                    ),
+                    Text(
+                      recommendation.description,
+                      style: TextStyle(
+                        fontSize: 12,
+                        fontWeight: FontWeight.w300,
+                        color: Colors.white,
+                      ),
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text(
+                          recommendation.price,
+                          style: TextStyle(
+                            fontSize: 12,
+                            fontWeight: FontWeight.w400,
+                            color: Colors.white,
                           ),
                         ),
-                      ),
-                      Text(
-                        recommendation.title,
-                        style: TextStyle(
-                          fontSize: 14,
-                          fontWeight: FontWeight.w700,
-                        ),
-                      ),
-                      Text(
-                        recommendation.description,
-                        style: TextStyle(
-                          fontSize: 14,
-                          fontWeight: FontWeight.w300,
-                        ),
-                      ),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Text(
-                            recommendation.price,
-                            style: TextStyle(
-                              fontSize: 10,
-                              fontWeight: FontWeight.w300,
+                        SizedBox(width: 80),
+                        Row(
+                          children: [
+                            Icon(
+                              Icons.favorite_border,
+                              size: 12,
+                              color: Colors.white,
                             ),
-                          ),
-                          SizedBox(width: 80),
-                          Row(
-                            children: [
-                              Icon(
-                                Icons.favorite_border,
-                                size: 12,
+                            Text(
+                              recommendation.likes,
+                              style: TextStyle(
+                                fontSize: 10,
+                                fontWeight: FontWeight.w400,
+                                color: Colors.white,
                               ),
-                              Text(
-                                recommendation.likes,
-                                style: TextStyle(
-                                  fontSize: 10,
-                                  fontWeight: FontWeight.w200,
-                                ),
-                              ),
-                            ],
-                          ),
-                        ],
-                      ),
-                    ],
-                  ),
+                            ),
+                          ],
+                        ),
+                      ],
+                    ),
+                  ],
                 ),
               ),
             ),

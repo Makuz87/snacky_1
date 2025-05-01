@@ -1,7 +1,7 @@
 import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:snacky_1/src/features/order/domain/order.dart';
-import 'package:snacky_1/src/features/order/presentation/add_to_card_btn.dart';
+import 'package:snacky_1/src/features/order/presentation/add_to_card_btn2.dart';
 
 class OrderNowWidget extends StatelessWidget {
   final Order order;
@@ -32,7 +32,6 @@ class OrderNowWidget extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
-              //Todo egal welcher Name?
               Text(Orders.title),
               Text(
                 order.title,
@@ -53,7 +52,7 @@ class OrderNowWidget extends StatelessWidget {
                 ),
               ),
               SizedBox(height: 30),
-              AddToCardBtn(title: "Order Now")
+              AddToCardBtn2(title: "Order Now")
             ],
           ),
         ),

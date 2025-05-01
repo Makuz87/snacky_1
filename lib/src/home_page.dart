@@ -18,7 +18,7 @@ class HomePage extends StatelessWidget {
                   fit: BoxFit.cover),
             ),
             child: Container(
-              // padding: EdgeInsets.all(12),
+              padding: EdgeInsets.all(12),
               // width: double.infinity,
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -64,7 +64,9 @@ class HomePage extends StatelessWidget {
 
                   SizedBox(height: 20),
 
-                  OfferCardWidget(),
+                  OfferCardWidget(
+                    title: "Add to order",
+                  ),
 
                   SizedBox(height: 40),
 
@@ -74,19 +76,23 @@ class HomePage extends StatelessWidget {
                         color: Colors.white, fontWeight: FontWeight.w900),
                   ),
 
-                  SizedBox(height: 15),
+                  SizedBox(height: 20),
 
-                  // TODO   RECOMMEND
+                  //  RECOMMEND
                   Container(
-                    height: 260,
+                    height: 262,
                     child: ListView.builder(
-                        padding: EdgeInsets.all(8),
-                        scrollDirection: Axis.horizontal,
-                        itemCount: recommendations.length,
-                        itemBuilder: (context, index) {
-                          return RecommendWidget(
-                              recommendation: recommendations[index]);
-                        }),
+                      scrollDirection: Axis.horizontal,
+                      itemCount: recommendations.length,
+                      itemBuilder: (context, index) {
+                        return Padding(
+                          padding: const EdgeInsets.fromLTRB(0, 0, 12, 0),
+                          child: RecommendWidget(
+                            recommendation: recommendations[index],
+                          ),
+                        );
+                      },
+                    ),
                   ),
                 ],
               ),
