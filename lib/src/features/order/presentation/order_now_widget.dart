@@ -32,7 +32,6 @@ class OrderNowWidget extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
-              Text(Orders.title),
               Text(
                 order.title,
                 style: TextStyle(

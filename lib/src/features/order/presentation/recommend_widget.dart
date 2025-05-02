@@ -49,9 +49,9 @@ class RecommendWidget extends StatelessWidget {
                         top: 8,
                         right: 8,
                         child: IconButton(
-                          icon: Icon(Icons.close),
+                          icon: Icon(Icons.close_outlined),
                           onPressed: () => Navigator.of(context).pop(),
-                          color: Colors.white,
+                          color: const Color.fromARGB(255, 187, 187, 187),
                         ),
                       ),
                       // Container fürs BottomSheet
@@ -63,7 +63,9 @@ class RecommendWidget extends StatelessWidget {
                           mainAxisAlignment: MainAxisAlignment.end,
                           children: [
                             // Detailcontainer im BottomSheet
-                            DetailsWidget(detailCard: details),
+                            DetailsWidget(
+                              detailCard: details,
+                            ),
 
                             SizedBox(height: 50),
 
@@ -122,17 +124,26 @@ class RecommendWidget extends StatelessWidget {
                                 Row(
                                   spacing: 10,
                                   children: [
-                                    Icon(Icons.remove_circle_outline,
-                                        color: Colors.white),
+                                    Icon(
+                                      Icons.remove_circle_outline,
+                                      size: 30,
+                                      color: const Color.fromARGB(
+                                          255, 187, 187, 187),
+                                    ),
                                     Text(
                                       "1",
                                       style: TextStyle(
-                                          color: Colors.white,
-                                          fontSize: 18,
-                                          fontWeight: FontWeight.w600),
+                                          color: const Color.fromARGB(
+                                              255, 255, 255, 255),
+                                          fontSize: 22,
+                                          fontWeight: FontWeight.w700),
                                     ),
-                                    Icon(Icons.add_circle_outline,
-                                        color: Colors.white),
+                                    Icon(
+                                      Icons.add_circle_outline,
+                                      size: 30,
+                                      color: const Color.fromARGB(
+                                          255, 187, 187, 187),
+                                    ),
                                   ],
                                 ),
                               ],
@@ -202,9 +213,17 @@ class RecommendWidget extends StatelessWidget {
                         color: Colors.white,
                       ),
                     ),
+                    SizedBox(height: 20),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
+                        Text(
+                          "₳",
+                          style: TextStyle(
+                              fontSize: 16,
+                              color: Colors.white,
+                              fontWeight: FontWeight.w400),
+                        ),
                         Text(
                           recommendation.price,
                           style: TextStyle(
@@ -215,6 +234,7 @@ class RecommendWidget extends StatelessWidget {
                         ),
                         SizedBox(width: 80),
                         Row(
+                          spacing: 4,
                           children: [
                             Icon(
                               Icons.favorite_border,

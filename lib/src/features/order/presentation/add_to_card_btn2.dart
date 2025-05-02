@@ -35,15 +35,14 @@ class AddToCardBtn2 extends StatelessWidget {
           borderRadius: BorderRadius.circular(12),
           boxShadow: [
             BoxShadow(
-              color: Color.fromARGB(172, 246, 158, 224),
-              spreadRadius: 3,
-              blurRadius: 15,
+              color: Color.fromARGB(90, 246, 158, 224),
+              spreadRadius: 5,
+              blurRadius: 10,
               offset: Offset(0, 5),
             )
           ],
         ),
         child: Container(
-          // alignment: Alignment.center,
           padding: EdgeInsets.symmetric(horizontal: 64, vertical: 12),
           child: Text(
             title,

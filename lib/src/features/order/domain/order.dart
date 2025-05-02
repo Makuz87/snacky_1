@@ -13,11 +13,16 @@ class Order {
 }
 
 final Orders = Order(
-    title: "Feeling snackish Today?",
-    description:
-        "Explore Angi`s most popular snack selection \nand get instantly happy.",
-    orderNow: ElevatedButton(
-        onPressed: () {},
-        child: Text(
-          "Order Now",
-        )));
+  title: "Feeling snackish Today?",
+  description:
+      "Explore Angi`s most popular snack selection \nand get instantly happy.",
+  orderNow: ElevatedButton(
+    onPressed: () {},
+    child: Text(
+      "Order Now",
+      style: TextStyle(
+        fontSize: 12,
+      ),
+    ),
+  ),
+);

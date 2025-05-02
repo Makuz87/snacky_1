@@ -12,14 +12,14 @@ class OfferCardWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 240,
-      width: 350,
+      height: 260,
+      width: 370,
       decoration: BoxDecoration(
         image: DecorationImage(
-          image: AssetImage(
-            "assets/images/Top Card.png",
-          ),
-        ),
+            image: AssetImage(
+              "assets/images/Top Card.png",
+            ),
+            fit: BoxFit.contain),
       ),
       child: Stack(
         clipBehavior: Clip.none,
@@ -36,18 +36,33 @@ class OfferCardWidget extends StatelessWidget {
                   style: TextStyle(
                       color: Colors.white,
                       fontWeight: FontWeight.w800,
-                      fontSize: 18),
+                      fontSize: 20),
                 ),
                 //
                 Text("Delish vegan burger \nthat tastes like heaven",
                     style: TextStyle(color: Colors.white)),
                 //
-                Text(
-                  "€13.99",
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontWeight: FontWeight.w800,
-                  ),
+
+                SizedBox(height: 10),
+                Row(
+                  children: [
+                    Text(
+                      "₳",
+                      style: TextStyle(
+                          fontSize: 20,
+                          color: Colors.white,
+                          fontWeight: FontWeight.w700),
+                    ),
+                    SizedBox(width: 4),
+                    Text(
+                      "13.99",
+                      style: TextStyle(
+                        fontSize: 18,
+                        color: Colors.white,
+                        fontWeight: FontWeight.w800,
+                      ),
+                    ),
+                  ],
                 ),
                 SizedBox(height: 30),
                 //
@@ -61,7 +76,7 @@ class OfferCardWidget extends StatelessWidget {
             bottom: -30,
             right: 0,
             child: Image.asset("assets/images/Burger_3D.png"),
-            height: 150,
+            height: 230,
           ),
         ],
       ),

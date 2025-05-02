@@ -1,10 +1,17 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
+import 'package:snacky_1/src/categorie_button_small.dart';
 import 'package:snacky_1/src/features/order/domain/recommendation.dart';
+import 'package:snacky_1/src/features/order/presentation/categorie_button_small_widget.dart';
+import 'package:snacky_1/src/features/order/presentation/categrorie_button_widget.dart';
 import 'package:snacky_1/src/features/order/presentation/offer_card_widget.dart';
 import 'package:snacky_1/src/features/order/presentation/recommend_widget.dart';
 
 class HomePage extends StatelessWidget {
-  const HomePage({super.key});
+  const HomePage({
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -18,22 +25,23 @@ class HomePage extends StatelessWidget {
                   fit: BoxFit.cover),
             ),
             child: Container(
-              padding: EdgeInsets.all(12),
+              padding: EdgeInsets.fromLTRB(12, 24, 0, 24),
               // width: double.infinity,
               child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
+                  SizedBox(height: 40),
                   Text(
                     "Choose Your Favorite \nSnack",
                     style: TextStyle(
                       color: Colors.white,
                       fontSize: 24,
-                      fontWeight: FontWeight.w700,
+                      fontWeight: FontWeight.w800,
                     ),
                   ),
 
-                  SizedBox(height: 10),
+                  SizedBox(height: 5),
 
                   SingleChildScrollView(
                     scrollDirection: Axis.horizontal,
@@ -41,46 +49,59 @@ class HomePage extends StatelessWidget {
                       child: Row(
                         spacing: 12,
                         children: [
-                          ElevatedButton(
-                            onPressed: () {},
-                            child: Text("All categories"),
+                          CategrorieButtonWidget(),
+                          Container(
+                            height: 40,
+                            width: 100,
+                            decoration: BoxDecoration(
+                              color: Colors.white.withOpacity(0.5),
+                              borderRadius: BorderRadius.circular(20),
+                              border: Border.all(
+                                color: Colors.white.withOpacity(0.6),
+                              ),
+                            ),
+                            child: TextButton(
+                              onPressed: () {},
+                              child: Text(
+                                "Salty",
+                                style: TextStyle(
+                                    color: Colors.black,
+                                    fontWeight: FontWeight.w700,
+                                    letterSpacing: -0.6),
+                              ),
+                            ),
                           ),
-                          ElevatedButton(
-                            onPressed: () {},
-                            child: Text("Salty"),
-                          ),
-                          ElevatedButton(
-                            onPressed: () {},
-                            child: Text("Sweet"),
-                          ),
-                          ElevatedButton(
-                            onPressed: () {},
-                            child: Text("Drinks"),
-                          ),
+                          // CategorieButtonSmallWidget(categorie: Categorie1),
+                          CategorieButtonSmallWidget(categorie: Categorie2),
+                          CategorieButtonSmallWidget(categorie: Categorie3),
                         ],
                       ),
                     ),
                   ),
 
-                  SizedBox(height: 20),
+                  SizedBox(height: 40),
 
-                  OfferCardWidget(
-                    title: "Add to order",
+                  Center(
+                    child: OfferCardWidget(
+                      title: "Add to order",
+                    ),
                   ),
 
-                  SizedBox(height: 40),
+                  SizedBox(height: 20),
 
                   Text(
                     "We Recommend",
                     style: TextStyle(
-                        color: Colors.white, fontWeight: FontWeight.w900),
+                        fontSize: 18,
+                        color: Colors.white,
+                        fontWeight: FontWeight.w900),
                   ),
 
-                  SizedBox(height: 20),
+                  SizedBox(height: 10),
 
                   //  RECOMMEND
                   Container(
-                    height: 262,
+                    height: 290,
                     child: ListView.builder(
                       scrollDirection: Axis.horizontal,
                       itemCount: recommendations.length,

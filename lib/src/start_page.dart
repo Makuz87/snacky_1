@@ -14,14 +14,6 @@ class StartPage extends StatelessWidget {
             image: AssetImage("assets/images/Splash4.png"),
             fit: BoxFit.cover,
           ),
-          // gradient: LinearGradient(
-          //   colors: [
-          //     Color(0xFFE98796),
-          //     Color(0xFF8C5BEA),
-          //   ],
-          //   begin: Alignment.topLeft,
-          //   end: Alignment.bottomRight,
-          // ),
         ),
         child: Align(
           alignment: Alignment.bottomCenter,

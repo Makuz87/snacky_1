@@ -18,7 +18,7 @@ List<Recommendation> recommendations = [
   Recommendation(
     title: "Moglis Cup",
     description: "Strawberry ice cream",
-    price: "₳8.99",
+    price: "8.99",
     likes: "200",
     imagePath: "assets/images/cat cupcakes_3D_Mogli.png",
   ),
@@ -29,12 +29,6 @@ List<Recommendation> recommendations = [
     likes: "165",
     imagePath: "assets/images/Ice.cream.png",
   ),
-  Recommendation(
-      title: "Balu`s Cup",
-      description: "Pistachio ice cream",
-      price: "8.99",
-      likes: "165",
-      imagePath: "assets/images/Ice.cream.png"),
   Recommendation(
     title: "Smiling David",
     description: "Coffe ice cream",

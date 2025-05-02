@@ -15,7 +15,7 @@ class AddToCardBtn1 extends StatelessWidget {
       children: [
         Container(
           padding: EdgeInsets.all(12),
-          width: 152,
+          width: 102,
           height: 42,
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(14),
@@ -61,14 +61,15 @@ class AddToCardBtn1 extends StatelessWidget {
               ],
             ),
             child: Container(
-              width: 150,
+              width: 100,
               height: 40,
               alignment: Alignment.center,
               child: Text(
                 title,
                 style: TextStyle(
                   fontSize: 14,
-                  fontWeight: FontWeight.w700,
+                  letterSpacing: -0.6,
+                  fontWeight: FontWeight.w500,
                   color: Colors.white,
                 ),
               ),
